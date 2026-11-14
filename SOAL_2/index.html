@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dian Nusantara Store — Pusat Perangkat Jaringan, CCTV &amp; Hardware IT</title>
+    <!-- Favicon Logo Resmi -->
+    <link rel="icon" type="image/jpeg" href="images/logo.jpg">
+    <!-- Memanggil Berkas CSS Eksternal -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+    <!-- 1. HEADER: LOGO DAN MENU NAVIGASI -->
+    <header id="main-header">
+        <div class="container">
+            <nav id="navbar-utama">
+                <!-- Logo Toko Resmi -->
+                <div class="logo-wrapper">
+                    <img src="images/logo.jpg" alt="Logo Dian Nusantara Store" class="logo-img">
+                    <div>
+                        <div class="logo-title">DIAN NUSANTARA STORE</div>
+                        <div class="logo-sub">Distributor Resmi Jaringan &amp; CCTV</div>
+                    </div>
+                </div>
+
+                <!-- Menu Navigasi Utama -->
+                <ul id="nav-menu">
+                    <li><a href="index.html" class="nav-link active">Beranda</a></li>
+                    <li><a href="#katalog-produk" class="nav-link">Katalog</a></li>
+                    <li><a href="promo.html" class="nav-link">Promo</a></li>
+                    <li><a href="cara-beli.html" class="nav-link">Cara Beli</a></li>
+                    <!-- <li><a href="https://wa.me/6285693176692" target="_blank" class="nav-link">Kontak</a></li> -->
+                    <li><a href="keranjang.html" class="nav-btn-keranjang">🛒 Keranjang (<span id="cart-count">1</span>)</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- 2. BANNER SHOWCASE / PROMOSI UTAMA -->
+        <section id="hero-showcase">
+            <div class="container">
+                <div class="hero-grid">
+                    <div class="hero-text-area">
+                        <span class="hero-tagline">🔥 PROMO SPESIAL PERANGKAT IT 2026</span>
+                        <h1>DISKON SPESIAL PERANGKAT JARINGAN &amp; CCTV HINGGA 35%</h1>
+                        <p>
+                            Temukan berbagai solusi infrastruktur IT terlengkap dan terpercaya: Router MikroTik, Switch Managed Cisco, Paket Kamera CCTV 4K, Kabel Fiber Optik, hingga Server Rack berkualitas bergaransi resmi distributor.
+                        </p>
+                        <div class="hero-actions">
+                            <a href="#katalog-produk" class="btn-primary" id="btn-beli-sekarang">Beli Sekarang ↓</a>
+                            <a href="promo.html" class="btn-outline">Lihat Penawaran Promo ↗</a>
+                        </div>
+                    </div>
+                    <div class="hero-visual-card">
+                        <img src="images/cctv-outdoor.jpg" alt="Showcase Perangkat IT dan Networking DianNusantara Store" class="hero-img-banner">
+                        <p class="hero-caption-sub">
+                            Distributor Resmi Perangkat Jaringan &amp; Sistem Keamanan CCTV
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bar Nilai Tambah & Jaminan Belanja -->
+        <section id="promo-section" class="promo-bar">
+            <div class="container">
+                <div class="promo-grid">
+                    <div class="promo-item">
+                        <span class="promo-icon">🛡️</span>
+                        <div>
+                            <strong>100% Produk Original</strong>
+                            <p>Seluruh unit baru bersegel resmi dari distributor terpercaya.</p>
+                        </div>
+                    </div>
+                    <div class="promo-item">
+                        <span class="promo-icon">🚚</span>
+                        <div>
+                            <strong>Pengiriman Cepat &amp; Aman</strong>
+                            <p>Pengemasan rapi berstandar ekspedisi ke seluruh Indonesia.</p>
+                        </div>
+                    </div>
+                    <div class="promo-item">
+                        <span class="promo-icon">🛠️</span>
+                        <div>
+                            <strong>Bantuan Teknis Berpengalaman</strong>
+                            <p>Konsultasi gratis panduan awal instalasi dan konfigurasi perangkat.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. KATALOG 6 PRODUK UNGGULAN -->
+        <section id="katalog-produk">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-eyebrow">KATALOG PILIHAN TOKO</span>
+                    <h2>KATALOG 6 PRODUK UNGGULAN</h2>
+                    <p class="section-subtitle">
+                        Pilihan perangkat keras terbaik dengan spesifikasi andal untuk kebutuhan jaringan kantor, data center, dan pengawasan gedung.
+                    </p>
+                </div>
+
+                <!-- KOTAK INFORMASI PRODUK DISKON & PROMO TOKO -->
+
+                <!-- Grid 6 Kartu Produk -->
+                <div class="grid-produk">
+
+                    <!-- Kartu Produk 1: MikroTik (Diskon 15%) -->
+                    <article class="card-produk" id="produk-1">
+                        <div class="card-thumbnail-wrap">
+                            <img src="images/MikroTik RouterBoard RB4011.jpg" alt="MikroTik RouterBoard RB4011" class="card-thumbnail">
+                            <span class="badge-promo" style="background:#0284c7;">Original Segel</span>
+                        </div>
+                        <div class="card-content">
+                            <span class="card-category">ROUTER &amp; GATEWAY</span>
+                            <h3 class="card-title">MikroTik RouterBoard RB4011</h3>
+                            
+                            <div class="price-promo-tag">
+                                <span class="price-original">Rp 4.500.000</span>
+                                <span class="price-tag" style="margin:0;">Rp 3.850.000</span>
+                                <span class="badge-discount-percent">Hemat 15%</span>
+                            </div>
+
+                            <p class="card-desc">
+                                Router performa tinggi Quad-Core 1.4GHz dengan 10 port Gigabit LAN dan 1 port SFP+ 10Gbps untuk core network.
+                            </p>
+                            <a href="detail-produk.html?id=1" class="card-link-action">[ Lihat Detail Produk ↗ ]</a>
+                        </div>
+                    </article>
+
+                    <!-- Kartu Produk 2: Switch Cisco (Harga Resmi) -->
+                    <article class="card-produk" id="produk-2">
+                        <div class="card-thumbnail-wrap">
+                            <img src="images/switch cisco catalyst 24 port .jpg" alt="Switch Cisco Catalyst 24-Port Gigabit" class="card-thumbnail">
+                            <span class="badge-promo" style="background:#0284c7;">Best Seller</span>
+                        </div>
+                        <div class="card-content">
+                            <span class="card-category">SWITCH CISCO</span>
+                            <h3 class="card-title">Switch Cisco Catalyst 24-Port</h3>
+                            <div class="price-tag">Rp 7.500.000</div>
+                            <p class="card-desc">
+                                Switch managed Layer 2 dengan 24 port PoE+ dan 4x port SFP 1G untuk distribusi traffic jaringan kantor yang stabil.
+                            </p>
+                            <a href="detail-produk.html?id=2" class="card-link-action">[ Lihat Detail Produk ↗ ]</a>
+                        </div>
+                    </article>
+
+                    <!-- Kartu Produk 3: Paket CCTV 4K (Diskon 25%) -->
+                    <article class="card-produk" id="produk-3">
+                        <div class="card-thumbnail-wrap">
+                            <img src="images/paket cctv.jpg" alt="Paket Kamera CCTV IP 4K Hikvision" class="card-thumbnail">
+                            <span class="badge-promo" style="background:#059669;">Paket Komplit</span>
+                        </div>
+                        <div class="card-content">
+                            <span class="card-category">KAMERA CCTV</span>
+                            <h3 class="card-title">Paket CCTV IP 4K Hikvision</h3>
+                            
+                            <div class="price-promo-tag">
+                                <span class="price-original">Rp 16.350.000</span>
+                                <span class="price-tag" style="margin:0;">Rp 12.250.000</span>
+                                <span class="badge-discount-percent">Hemat 25%</span>
+                            </div>
+
+                            <p class="card-desc">
+                                Paket lengkap 8 kamera outdoor IP 4K weatherproof dengan NVR 16 Channel dan harddisk surveillance 4TB.
+                            </p>
+                            <a href="detail-produk.html?id=3" class="card-link-action">[ Lihat Detail Produk ↗ ]</a>
+                        </div>
+                    </article>
+
+                    <!-- Kartu Produk 4: Kabel Fiber (Diskon 20%) -->
+                    <article class="card-produk" id="produk-4">
+                        <div class="card-thumbnail-wrap">
+                            <img src="images/Fiber optic dropcore.jpg" alt="Kabel Fiber Optik Drop Core 1000m" class="card-thumbnail">
+                            <span class="badge-promo" style="background:#16a085;">Ready Stock</span>
+                        </div>
+                        <div class="card-content">
+                            <span class="card-category">FIBER OPTIK</span>
+                            <h3 class="card-title">Kabel Fiber Drop Core (1000m)</h3>
+                            
+                            <div class="price-promo-tag">
+                                <span class="price-original">Rp 810.000</span>
+                                <span class="price-tag" style="margin:0;">Rp 650.000</span>
+                                <span class="badge-discount-percent">Hemat 20%</span>
+                            </div>
+
+                            <p class="card-desc">
+                                Kabel FO Single Mode 1 Core dengan 3 kawat baja anti-putus pelindung cuaca ekstrim untuk instalasi udara outdoor.
+                            </p>
+                            <a href="detail-produk.html?id=4" class="card-link-action">[ Lihat Detail Produk ↗ ]</a>
+                        </div>
+                    </article>
+
+                    <!-- Kartu Produk 5: Rak Server (Harga Resmi) -->
+                    <article class="card-produk" id="produk-5">
+                        <div class="card-thumbnail-wrap">
+                            <img src="images/rak server.jpg" alt="Server Rack Cabinet 19 Inch 42U Data Center" class="card-thumbnail">
+                            <span class="badge-promo" style="background:#6366f1;">Heavy Duty 42U</span>
+                        </div>
+                        <div class="card-content">
+                            <span class="card-category">RACK SERVER</span>
+                            <h3 class="card-title">Rak Server Cabinet 19" 42U</h3>
+                            <div class="price-tag">Rp 8.900.000</div>
+                            <p class="card-desc">
+                                Rak server enclosure kedalaman 1000mm dengan pintu kaca tempered glass kokoh, dual exhaust fan, dan PDU 8 outlet.
+                            </p>
+                            <a href="detail-produk.html?id=5" class="card-link-action">[ Lihat Detail Produk ↗ ]</a>
+                        </div>
+                    </article>
+
+                    <!-- Kartu Produk 6: Laptop Think (Harga Resmi) -->
+                    <article class="card-produk" id="produk-6">
+                        <div class="card-thumbnail-wrap">
+                            <img src="images/produk-laptop-thinkpad.jpg" alt="Laptop Workstation Lenovo ThinkPad i7" class="card-thumbnail">
+                            <span class="badge-promo" style="background:#0f172a;">Garansi 3 Thn</span>
+                        </div>
+                        <div class="card-content">
+                            <span class="card-category">LAPTOP KERJA</span>
+                            <h3 class="card-title">Laptop ThinkPad Workstation i7</h3>
+                            <div class="price-tag">Rp 16.800.000</div>
+                            <p class="card-desc">
+                                Laptop profesional teknisi IT dengan prosesor Intel Core i7, RAM 16GB DDR5, SSD 512GB NVMe, dan port LAN RJ-45 fisik.
+                            </p>
+                            <a href="detail-produk.html?id=6" class="card-link-action">[ Lihat Detail Produk ↗ ]</a>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 4. FOOTER RESMI
+         (Jika 'Tentang Toko' diklik kembali ke beranda,
+          Jika 'Layanan Pelanggan' diklik ke Panduan Cara Beli) -->
+    <footer id="footer-main">
+        <div class="container">
+            <div id="footer-menu-links">
+                <a href="index.html">Tentang Toko</a>
+                <span>|</span>
+                <a href="cara-beli.html">Layanan Pelanggan</a>
+                <span>|</span>
+                <a href="https://wa.me/6285693176692" target="_blank">Kontak Kami</a>
+            </div>
+            <div class="footer-contacts">
+                <a href="https://wa.me/6285693176692" target="_blank" class="footer-contact-badge">
+                    <span class="contact-icon">💬</span> WA: <strong>0856-9317-6692</strong>
+                </a>
+                <span class="footer-divider">•</span>
+                <a href="mailto:cs@diannusantara.store" class="footer-contact-badge">
+                    <span class="contact-icon">✉️</span> Email: <strong>cs@diannusantara.store</strong>
+                </a>
+                
+            </div>
+            <p style="margin: 4px 0 0 0;">
+                <span id="footer-copyright">Copyright &copy; 2026 - 411242033 Doly Mardianto. All Rights Reserved.</span>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Update jumlah badge keranjang secara otomatis dari local Storage
+        function updateNavbarCartCount() {
+            let totalQty = 0;
+            try {
+                const stored = localStorage.getItem('dns_cart');
+                if (stored !== null) {
+                    const cart = JSON.parse(stored);
+                    if (Array.isArray(cart)) {
+                        totalQty = cart.reduce((acc, it) => acc + (it.qty || 1), 0);
+                    }
+                }
+            } catch(e) {}
+            const countEl = document.getElementById('cart-count');
+            if (countEl) countEl.textContent = totalQty;
+        }
+        document.addEventListener('DOMContentLoaded', updateNavbarCartCount);
+    </script>
+
+</body>
+</html>

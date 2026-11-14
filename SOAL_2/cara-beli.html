@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panduan Cara Beli &amp; Prosedur Transaksi — Dian Nusantara Store</title>
+    <!-- Favicon Logo Resmi -->
+    <link rel="icon" type="image/jpeg" href="images/logo.jpg">
+    <!-- Memanggil Berkas CSS Eksternal -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <style>
+        /* Animasi Khusus Halaman Cara Beli */
+        @keyframes floatStep {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(2, 132, 199, 0.4); }
+            50% { box-shadow: 0 0 0 12px rgba(2, 132, 199, 0); }
+        }
+
+        @keyframes pulseGlowOrange {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.4); }
+            50% { box-shadow: 0 0 0 12px rgba(249, 115, 22, 0); }
+        }
+
+        @keyframes shimmerLine {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+        .step-visual-card {
+            background: #ffffff;
+            border: 1.5px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 24px 18px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .step-visual-card:hover {
+            transform: translateY(-8px);
+            border-color: #0284c7;
+            box-shadow: 0 12px 24px rgba(2, 132, 199, 0.12);
+        }
+
+        .step-icon-bubble {
+            width: 72px;
+            height: 72px;
+            margin: 0 auto 16px auto;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            animation: floatStep 4s ease-in-out infinite;
+        }
+
+        .step-visual-card:nth-child(1) .step-icon-bubble { animation-delay: 0s; background: #e0f2fe; color: #0284c7; }
+        .step-visual-card:nth-child(2) .step-icon-bubble { animation-delay: 0.8s; background: #fef3c7; color: #d97706; }
+        .step-visual-card:nth-child(3) .step-icon-bubble { animation-delay: 1.6s; background: #ffedd5; color: #f97316; }
+        .step-visual-card:nth-child(4) .step-icon-bubble { animation-delay: 2.4s; background: #dcfce7; color: #16a34a; }
+
+        .step-number-pill {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #0f172a;
+            color: #ffffff;
+            font-size: 12px;
+            font-weight: 800;
+            padding: 4px 14px;
+            border-radius: 20px;
+            letter-spacing: 0.5px;
+        }
+
+        .step-preview-thumb {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+            border-radius: 6px;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            padding: 3px;
+            margin: 8px auto;
+            display: block;
+        }
+
+        /* Banner Alur Penghubung */
+        .flow-tracker-bar {
+            height: 4px;
+            background: linear-gradient(90deg, #0284c7, #f97316, #10b981, #0284c7);
+            background-size: 200% 100%;
+            animation: shimmerLine 6s linear infinite;
+            border-radius: 2px;
+            margin: 25px 0 35px 0;
+        }
+
+        /* Logo / Visual Pills */
+        .logo-badge-card {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            border-radius: 10px;
+            padding: 16px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            transition: all 0.25s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+
+        .logo-badge-card:hover {
+            border-color: #f97316;
+            transform: scale(1.02);
+            box-shadow: 0 6px 16px rgba(249, 115, 22, 0.08);
+        }
+
+        .logo-emblem {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. HEADER: LOGO DAN MENU NAVIGASI UTAMA -->
+    <header id="main-header">
+        <div class="container">
+            <nav id="navbar-utama">
+                <div class="logo-wrapper">
+                    <img src="images/logo.jpg" alt="Logo Dian Nusantara Store" class="logo-img">
+                    <div>
+                        <div class="logo-title">DIAN NUSANTARA STORE</div>
+                        <div class="logo-sub">Distributor Resmi Jaringan &amp; CCTV</div>
+                    </div>
+                </div>
+
+                <!-- Menu Navigasi Utama -->
+                <ul id="nav-menu">
+                    <li><a href="index.html" class="nav-link">Beranda</a></li>
+                    <li><a href="index.html#katalog-produk" class="nav-link">Katalog</a></li>
+                    <li><a href="promo.html" class="nav-link">Promo</a></li>
+                    <li><a href="cara-beli.html" class="nav-link active">Cara Beli</a></li>
+                    <!-- <li><a href="https://wa.me/6285693176692" target="_blank" class="nav-link">Kontak</a></li> -->
+                    <li><a href="keranjang.html" class="nav-btn-keranjang">🛒 Keranjang (<span id="cart-count">0</span>)</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container" style="padding-top: 25px; padding-bottom: 50px;">
+
+        <!-- Breadcrumb Navigasi Halaman -->
+        <div class="detail-breadcrumb" style="margin-bottom: 20px;">
+            <a href="index.html">Beranda</a> &gt; 
+            <span style="color:#0f172a; font-weight:600;">Infografis Cara Pembelian</span>
+        </div>
+
+        <!-- Banner Header Visual -->
+        <div class="section-header" style="text-align: center; margin-bottom: 25px;">
+            <span class="section-eyebrow">ALUR TRANSAKSI VISUAL</span>
+            <h1 style="font-size: 26px; color: #0f172a; margin-top: 6px;">4 LANGKAH MUDAH BERBELANJA</h1>
+            <p class="section-subtitle" style="margin: 0 auto; max-width: 650px;">
+                Panduan praktis pengadaan perangkat keras IT dan sistem CCTV resmi Dian Nusantara Store.
+            </p>
+        </div>
+
+        <!-- Garis Animasi Alur Progres -->
+        <div class="flow-tracker-bar"></div>
+
+        <!-- DIAGRAM 4 LANGKAH VISUAL & ANIMATIF -->
+        <section style="margin-bottom: 45px;">
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
+                
+                <!-- Langkah 1: Pilih Produk -->
+                <div class="step-visual-card">
+                    <span class="step-number-pill">LANGKAH 1</span>
+                    <div class="step-icon-bubble">
+                        🔍
+                    </div>
+                    <img src="images/MikroTik RouterBoard RB4011.jpg" alt="Pilih Produk" class="step-preview-thumb">
+                    <h3 style="font-size:16px; color:#0f172a; margin: 10px 0 4px 0;">Pilih Perangkat</h3>
+                    <p style="font-size:12.5px; color:#64748b; margin:0;">
+                        Temukan produk di katalog atau promo.
+                    </p>
+                </div>
+
+                <!-- Langkah 2: Cek Detail Spesifikasi -->
+                <div class="step-visual-card">
+                    <span class="step-number-pill" style="background:#0284c7;">LANGKAH 2</span>
+                    <div class="step-icon-bubble">
+                        ⚙️
+                    </div>
+                    <img src="images/paket cctv.jpg" alt="Cek Spesifikasi" class="step-preview-thumb">
+                    <h3 style="font-size:16px; color:#0f172a; margin: 10px 0 4px 0;">Cek Spesifikasi</h3>
+                    <p style="font-size:12.5px; color:#64748b; margin:0;">
+                        Tinjau tabel rincian teknis &amp; garansi.
+                    </p>
+                </div>
+
+                <!-- Langkah 3: Masukkan Keranjang -->
+                <div class="step-visual-card">
+                    <span class="step-number-pill" style="background:#f97316;">LANGKAH 3</span>
+                    <div class="step-icon-bubble">
+                        🛒
+                    </div>
+                    <img src="images/Fiber optic dropcore.jpg" alt="Masukkan Keranjang" class="step-preview-thumb">
+                    <h3 style="font-size:16px; color:#0f172a; margin: 10px 0 4px 0;">Pilih Kuantitas</h3>
+                    <p style="font-size:12.5px; color:#64748b; margin:0;">
+                        Tentukan Qty lalu klik Beli / Keranjang.
+                    </p>
+                </div>
+
+                <!-- Langkah 4: Checkout & Kirim -->
+                <div class="step-visual-card">
+                    <span class="step-number-pill" style="background:#16a34a;">LANGKAH 4</span>
+                    <div class="step-icon-bubble">
+                        🚚
+                    </div>
+                    <img src="images/cctv-outdoor.jpg" alt="Checkout dan Kirim" class="step-preview-thumb">
+                    <h3 style="font-size:16px; color:#0f172a; margin: 10px 0 4px 0;">Konfirmasi Order</h3>
+                    <p style="font-size:12.5px; color:#64748b; margin:0;">
+                        Isi alamat kirim dan terima invoice resmi.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- BAGIAN VISUAL: LOGO METODE PEMBAYARAN -->
+        <section style="margin-bottom: 35px;">
+            <h2 style="font-size:17px; color:#0f172a; margin-bottom:14px; display:flex; align-items:center; gap:8px;">
+                <span>💳</span> Pilihan Metode Pembayaran Resmi
+            </h2>
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;">
+                
+                <div class="logo-badge-card">
+                    <div class="logo-emblem" style="background:#005baa; color:#ffffff; font-weight:800; font-size:13px;">BCA</div>
+                    <div>
+                        <strong style="font-size:13.5px; color:#0f172a; display:block;">Transfer BCA</strong>
+                        <span style="font-size:11.5px; color:#64748b;">Rekening PT Resmi</span>
+                    </div>
+                </div>
+
+                <div class="logo-badge-card">
+                    <div class="logo-emblem" style="background:#002855; color:#fdb913; font-weight:800; font-size:10px;">MANDIRI</div>
+                    <div>
+                        <strong style="font-size:13.5px; color:#0f172a; display:block;">Bank Mandiri</strong>
+                        <span style="font-size:11.5px; color:#64748b;">Auto-Verifikasi 24 Jam</span>
+                    </div>
+                </div>
+
+                <div class="logo-badge-card">
+                    <div class="logo-emblem" style="background:#f97316; color:#ffffff; font-weight:800; font-size:16px;">📄</div>
+                    <div>
+                        <strong style="font-size:13.5px; color:#0f172a; display:block;">Invoice Tempo</strong>
+                        <span style="font-size:11.5px; color:#64748b;">Term 14 Hari (B2B)</span>
+                    </div>
+                </div>
+
+                <div class="logo-badge-card">
+                    <div class="logo-emblem" style="background:#16a34a; color:#ffffff; font-weight:800; font-size:16px;">💵</div>
+                    <div>
+                        <strong style="font-size:13.5px; color:#0f172a; display:block;">COD Jabodetabek</strong>
+                        <span style="font-size:11.5px; color:#64748b;">Bayar di Tempat</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- BAGIAN VISUAL: LOGO EKSPEDISI & JAMINAN DISTRIBUTOR -->
+        <section style="margin-bottom: 40px;">
+            <h2 style="font-size:17px; color:#0f172a; margin-bottom:14px; display:flex; align-items:center; gap:8px;">
+                <span>🚚</span> Logistik Pengiriman &amp; Jaminan Unit
+            </h2>
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;">
+                
+                <div class="logo-badge-card">
+                    <div class="logo-emblem" style="background:#fef3c7; color:#d97706; font-size:22px;">⚡</div>
+                    <div>
+                        <strong style="font-size:13.5px; color:#0f172a; display:block;">Kurir Instan</strong>
+                        <span style="font-size:11.5px; color:#64748b;">GoSend &amp; Grab Express</span>
+                    </div>
+                </div>
+
+                <div class="logo-badge-card">
+                    <div class="logo-emblem" style="background:#e0f2fe; color:#0284c7; font-size:22px;">📦</div>
+                    <div>
+                        <strong style="font-size:13.5px; color:#0f172a; display:block;">Ekspedisi Kargo</strong>
+                        <span style="font-size:11.5px; color:#64748b;">Palet Kayu Aman Seluruh RI</span>
+                    </div>
+                </div>
+
+                <div class="logo-badge-card">
+                    <div class="logo-emblem" style="background:#fee2e2; color:#ef4444; font-size:22px;">🛡️</div>
+                    <div>
+                        <strong style="font-size:13.5px; color:#0f172a; display:block;">Garansi 1-3 Thn</strong>
+                        <span style="font-size:11.5px; color:#64748b;">100% Distributor Resmi</span>
+                    </div>
+                </div>
+
+                <div class="logo-badge-card">
+                    <div class="logo-emblem" style="background:#dcfce7; color:#16a34a; font-size:22px;">🧾</div>
+                    <div>
+                        <strong style="font-size:13.5px; color:#0f172a; display:block;">e-Faktur Pajak</strong>
+                        <span style="font-size:11.5px; color:#64748b;">PPN Resmi Perusahaan</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- BANNER CTA INTERAKTIF (LOGO & TOMBOL AKSI) -->
+        <div style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 55%, #0284c7 100%); color:#ffffff; border-radius:12px; padding:32px 25px; text-align:center; box-shadow:0 8px 24px rgba(15,23,42,0.15);">
+            <img src="images/logo.jpg" alt="Logo Dian Nusantara" style="width:65px; height:65px; border-radius:50%; border:3px solid #ffffff; margin-bottom:12px; box-shadow:0 4px 10px rgba(0,0,0,0.2);">
+            <h2 style="color:#ffffff; font-size:20px; margin:0 0 8px 0;">Mulai Belanja Perangkat Jaringan Anda Sekarang</h2>
+            <p style="color:#cbd5e1; font-size:13.5px; margin:0 0 20px 0;">
+                Koleksi 6 produk unggulan siap kirim dengan jaminan garansi distributor resmi.
+            </p>
+            <div style="display:flex; justify-content:center; gap:14px; flex-wrap:wrap;">
+                <a href="index.html#katalog-produk" class="btn-primary" style="padding:11px 24px; font-size:13.5px; text-decoration:none; box-shadow:0 4px 12px rgba(249,115,22,0.4);">
+                    ← Buka Katalog Produk
+                </a>
+                <a href="https://wa.me/6285693176692" target="_blank" class="btn-outline" style="padding:11px 22px; font-size:13.5px; text-decoration:none; color:#ffffff; border-color:#ffffff;">
+                    💬 Chat WhatsApp Sales
+                </a>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- FOOTER RESMI -->
+    <footer id="footer-main">
+        <div class="container">
+            <div id="footer-menu-links">
+                <a href="index.html">Tentang Toko</a>
+                <span>|</span>
+                <a href="cara-beli.html">Layanan Pelanggan</a>
+                <span>|</span>
+                <a href="https://wa.me/6285693176692" target="_blank">Kontak Kami</a>
+            </div>
+            <div class="footer-contacts">
+                <a href="https://wa.me/6285693176692" target="_blank" class="footer-contact-badge">
+                    <span class="contact-icon">💬</span> WA: <strong>0856-9317-6692</strong>
+                </a>
+                <span class="footer-divider">•</span>
+                <a href="mailto:cs@diannusantara.store" class="footer-contact-badge">
+                    <span class="contact-icon">✉️</span> Email: <strong>cs@diannusantara.store</strong>
+                </a>
+
+            </div>
+            <p style="margin: 4px 0 0 0;">
+                <span id="footer-copyright">Copyright &copy; 2026 - 411242033 Doly Mardianto. All Rights Reserved.</span>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Update jumlah badge keranjang secara otomatis dari localStorage
+        function updateNavbarCartCount() {
+            let totalQty = 0;
+            try {
+                const stored = localStorage.getItem('dns_cart');
+                if (stored !== null) {
+                    const cart = JSON.parse(stored);
+                    if (Array.isArray(cart)) {
+                        totalQty = cart.reduce((acc, it) => acc + (it.qty || 1), 0);
+                    }
+                }
+            } catch(e) {}
+            const countEl = document.getElementById('cart-count');
+            if (countEl) countEl.textContent = totalQty;
+        }
+        document.addEventListener('DOMContentLoaded', updateNavbarCartCount);
+    </script>
+
+</body>
+</html>

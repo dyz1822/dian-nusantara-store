@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keranjang Belanja &amp; Checkout — Dian Nusantara Store</title>
+    <!-- Favicon Logo Resmi -->
+    <link rel="icon" type="image/jpeg" href="images/logo.jpg">
+    <!-- Memanggil Berkas CSS Eksternal -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+    <!-- 1. HEADER: LOGO DAN MENU NAVIGASI UTAMA -->
+    <header id="main-header">
+        <div class="container">
+            <nav id="navbar-utama">
+                <div class="logo-wrapper">
+                    <img src="images/logo.jpg" alt="Logo Dian Nusantara Store" class="logo-img">
+                    <div>
+                        <div class="logo-title">DIAN NUSANTARA STORE</div>
+                        <div class="logo-sub">Distributor Resmi Jaringan &amp; CCTV</div>
+                    </div>
+                </div>
+
+                <!-- Menu Navigasi Utama -->
+                <ul id="nav-menu">
+                    <li><a href="index.html" class="nav-link">Beranda</a></li>
+                    <li><a href="index.html#katalog-produk" class="nav-link">Katalog</a></li>
+                    <li><a href="promo.html" class="nav-link">Promo</a></li>
+                    <li><a href="cara-beli.html" class="nav-link">Cara Beli</a></li>
+                    <!-- <li><a href="https://wa.me/6285693176692" target="_blank" class="nav-link">Kontak</a></li> -->
+                    <li><a href="keranjang.html" class="nav-btn-keranjang active">🛒 Keranjang (<span id="cart-count">1</span>)</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container" style="padding-top: 25px; padding-bottom: 50px;">
+
+        <!-- Breadcrumb Navigasi -->
+        <div class="detail-breadcrumb" style="margin-bottom: 20px;">
+            <a href="index.html">Beranda</a> &gt; 
+            <a href="index.html#katalog-produk">Katalog Produk</a> &gt; 
+            <span style="color:#0f172a; font-weight:600;">Keranjang Belanja &amp; Checkout</span>
+        </div>
+
+        <div class="section-header" style="text-align: left; margin-bottom: 25px;">
+            <span class="section-eyebrow">TAHAP AKHIR PEMESANAN</span>
+            <h1 style="font-size: 26px; color: #0f172a; margin-top: 6px;">KERANJANG BELANJA &amp; CHECKOUT PESANAN</h1>
+            <p class="section-subtitle" style="margin: 0; max-width: 800px;">
+                Periksa rincian perangkat yang Anda pilih, sesuaikan jumlah unit, dan lengkapi alamat pengiriman untuk proses konfirmasi pesanan resmi.
+            </p>
+        </div>
+
+        <!-- KONTEN KERANJANG (DIBAGI 2 KOLOM RESPONSIF) -->
+        <div id="cart-content-wrapper" style="display: grid; grid-template-columns: 1.3fr 1fr; gap: 30px; align-items: start;">
+            
+            <!-- Kolom Kiri: Daftar Produk di Keranjang -->
+            <div>
+                <div style="background:#ffffff; border:1px solid #cbd5e1; border-radius:10px; padding:22px; box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+                    <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #e2e8f0; padding-bottom:12px; margin-bottom:18px;">
+                        <h2 style="font-size:17px; color:#0f172a; margin:0;">Daftar Perangkat Yang Dipilih</h2>
+                        <button type="button" onclick="kosongkanKeranjang()" style="background:none; border:none; color:#ef4444; font-size:12.5px; font-weight:600; cursor:pointer;">
+                            🗑️ Kosongkan Keranjang
+                        </button>
+                    </div>
+
+                    <!-- Tempat Merender Baris Produk Belanjaan -->
+                    <div id="cart-items-container">
+                        <!-- Diisi secara dinamis oleh JavaScript -->
+                    </div>
+
+                    <!-- Bar Aksi Bawah Daftar Belanja -->
+                    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-top:20px; padding-top:16px; border-top:1px dashed #cbd5e1;">
+                        <a href="index.html#katalog-produk" style="color:#0284c7; font-size:13.5px; font-weight:700; text-decoration:none;">
+                            ← Tambah Produk Lain dari Katalog
+                        </a>
+                        <span style="font-size:12.5px; color:#64748b;">
+                            Garansi resmi distributor berlaku untuk seluruh item
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Jaminan Keamanan Transaksi Toko -->
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:16px 20px; margin-top:20px; display:flex; gap:14px; align-items:center;">
+                    <span style="font-size:28px;">🛡️</span>
+                    <div style="font-size:13px; color:#475569; line-height:1.5;">
+                        <strong style="color:#0f172a;">Jaminan Belanja Aman &amp; Bergaransi Resmi:</strong>
+                        Semua pesanan disertai tanda terima resmi, surat jalan pengiriman, dan faktur pajak perusahaan (PPN) sesuai permintaan.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kolom Kanan: Rangkuman Total & Formulir Pengiriman -->
+            <div>
+                
+                <!-- Box Ringkasan Total Tagihan -->
+                <div style="background:#ffffff; border:1.5px solid #cbd5e1; border-radius:10px; padding:22px; box-shadow:0 3px 10px rgba(0,0,0,0.05); margin-bottom:24px;">
+                    <h3 style="font-size:16px; color:#0f172a; margin-top:0; margin-bottom:14px; border-bottom:1px solid #e2e8f0; padding-bottom:10px;">
+                        Ringkasan Biaya Belanja
+                    </h3>
+
+                    <div style="display:flex; justify-content:space-between; margin-bottom:10px; font-size:14px; color:#475569;">
+                        <span>Total Kuantitas:</span>
+                        <strong id="summary-total-qty" style="color:#0f172a;">1 Unit</strong>
+                    </div>
+
+                    <div style="display:flex; justify-content:space-between; margin-bottom:10px; font-size:14px; color:#475569;">
+                        <span>Subtotal Perangkat:</span>
+                        <span id="summary-subtotal" style="font-weight:600; color:#0f172a;">Rp 0</span>
+                    </div>
+
+                    <div style="display:flex; justify-content:space-between; margin-bottom:12px; font-size:14px; color:#475569;">
+                        <span>Biaya Pengiriman:</span>
+                        <strong style="color:#16a085;">GRATIS (Promo Toko)</strong>
+                    </div>
+
+                    <div style="border-top:1.5px dashed #cbd5e1; padding-top:14px; margin-top:12px; display:flex; justify-content:space-between; align-items:baseline;">
+                        <span style="font-size:15px; font-weight:700; color:#0f172a;">Total Pembayaran:</span>
+                        <div id="summary-grand-total" style="font-size:22px; font-weight:800; color:#f97316;">
+                            Rp 0
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulir Data Penerima & Pengiriman -->
+                <div style="background:#ffffff; border:1px solid #cbd5e1; border-radius:10px; padding:22px; box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+                    <h3 style="font-size:16px; color:#0f172a; margin-top:0; margin-bottom:6px;">
+                        Data Pemesan &amp; Alamat Pengiriman
+                    </h3>
+                    <p style="font-size:12.5px; color:#64748b; margin-bottom:18px;">
+                        Silakan isi data berikut agar sales kami dapat memverifikasi pesanan Anda:
+                    </p>
+
+                    <form id="form-checkout-keranjang" onsubmit="return prosesCheckoutPesanan(event)">
+                        <div class="form-group">
+                            <label for="nama_pemesan" class="form-label">Nama Lengkap / Perusahaan :</label>
+                            <input type="text" id="nama_pemesan" name="nama_pemesan" class="form-input" placeholder="contoh: Bpk. Ahmad / PT. Maju Berkah" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="wa_pemesan" class="form-label">Nomor WhatsApp Aktif :</label>
+                            <input type="tel" id="wa_pemesan" name="wa_pemesan" class="form-input" placeholder="contoh: 085693176692" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="alamat_tujuan" class="form-label">Alamat Lengkap Pengiriman :</label>
+                            <textarea id="alamat_tujuan" name="alamat_tujuan" class="form-textarea" rows="3" placeholder="Nama jalan, nomor gedung/rumah, kelurahan, kecamatan, kota, &amp; kode pos" required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="metode_bayar" class="form-label">Metode Pembayaran :</label>
+                            <select id="metode_bayar" name="metode_bayar" class="form-select">
+                                <option value="Transfer Bank BCA (Virtual Account / Rek. Perusahaan)">Transfer Bank BCA Resmi PT</option>
+                                <option value="Transfer Bank Mandiri">Transfer Bank Mandiri</option>
+                                <option value="Faktur Tempo Perusahaan (Term of Payment 14 Hari)">Invoice Tempo Perusahaan (TOP 14 Hari)</option>
+                                <option value="Cash on Delivery (COD Jabodetabek)">Cash on Delivery / Bayar di Tempat (Jabodetabek)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="catatan_pembeli" class="form-label">Catatan Pesanan (Opsional) :</label>
+                            <input type="text" id="catatan_pembeli" name="catatan_pembeli" class="form-input" placeholder="contoh: Minta dicantumkan NPWP / kirim packing kayu">
+                        </div>
+
+                        <button type="submit" id="btn-submit-checkout" style="width:100%; background:#f97316; color:#ffffff; border:none; padding:14px; font-size:15px; font-weight:800; border-radius:8px; cursor:pointer; box-shadow:0 3px 8px rgba(249,115,22,0.3); margin-top:8px;">
+                            Konfirmasi &amp; Kirim Pesanan Sekarang ↗
+                        </button>
+                    </form>
+
+                    <!-- Tombol Pesan Cepat WhatsApp -->
+                    <div style="margin-top:15px; text-align:center;">
+                        <span style="font-size:12px; color:#94a3b8;">Atau butuh bantuan teknis cepat?</span>
+                        <a id="btn-wa-direct-cart" href="https://wa.me/6285693176692" target="_blank" style="display:block; margin-top:6px; color:#0284c7; font-size:13px; font-weight:700; text-decoration:none;">
+                            💬 Hubungi Sales via WhatsApp (+62 856-9317-6692) ↗
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Tampilan Jika Keranjang Kosong -->
+        <div id="cart-empty-view" style="display:none; text-align:center; padding:60px 20px; background:#ffffff; border:1px solid #cbd5e1; border-radius:10px; margin-top:20px;">
+            <div style="font-size:54px; margin-bottom:15px;">🛒</div>
+            <h2 style="font-size:22px; color:#0f172a; margin-bottom:8px;">Keranjang Belanja Anda Kosong</h2>
+            <p style="color:#64748b; font-size:14px; max-width:500px; margin:0 auto 24px auto;">
+                Tidak ada produk di dalam keranjang belanja saat ini. Silakan buka katalog produk kami untuk memilih perangkat jaringan atau CCTV yang ingin Anda pesan.
+            </p>
+            <div style="display:flex; justify-content:center; gap:12px; flex-wrap:wrap;">
+                <a href="index.html#katalog-produk" class="btn-primary" style="padding:12px 24px; font-size:14px; text-decoration:none;">
+                    ← Buka Katalog Produk Sekarang
+                </a>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- FOOTER RESMI -->
+    <footer id="footer-main">
+        <div class="container">
+            <div id="footer-menu-links">
+                <a href="index.html">Tentang Toko</a>
+                <span>|</span>
+                <a href="cara-beli.html">Layanan Pelanggan</a>
+                <span>|</span>
+                <a href="https://wa.me/6285693176692" target="_blank">Kontak Kami</a>
+            </div>
+            <div class="footer-contacts">
+                <a href="https://wa.me/6285693176692" target="_blank" class="footer-contact-badge">
+                    <span class="contact-icon">💬</span> WA: <strong>0856-9317-6692</strong>
+                </a>
+                <span class="footer-divider">•</span>
+                <a href="mailto:cs@diannusantara.store" class="footer-contact-badge">
+                    <span class="contact-icon">✉️</span> Email: <strong>cs@diannusantara.store</strong>
+                </a>
+                
+            </div>
+            <p style="margin: 4px 0 0 0;">
+                <span id="footer-copyright">Copyright &copy; 2026 - 411242033 Doly Mardianto. All Rights Reserved.</span>
+            </p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIKA KERANJANG DAN CHECKOUT -->
+    <script>
+        // Database 6 Produk Dian Nusantara Store
+        const databaseProduk = {
+            1: {
+                id: 1,
+                name: "MikroTik RouterBoard RB4011",
+                sku: "MT-RB4011-RM",
+                price: "Rp 3.850.000",
+                priceNum: 3850000,
+                image: "images/MikroTik RouterBoard RB4011.jpg",
+                isPromo: true,
+                savings: "Rp 650.000 (15%)"
+            },
+            2: {
+                id: 2,
+                name: "Switch Cisco Catalyst 24-Port",
+                sku: "CS-WS-C2960X-24PS-L",
+                price: "Rp 7.500.000",
+                priceNum: 7500000,
+                image: "images/switch cisco catalyst 24 port .jpg",
+                isPromo: false
+            },
+            3: {
+                id: 3,
+                name: "Paket CCTV IP 4K Hikvision",
+                sku: "HK-IP4K-KIT8-16CH",
+                price: "Rp 12.250.000",
+                priceNum: 12250000,
+                image: "images/paket cctv.jpg",
+                isPromo: true,
+                savings: "Rp 4.100.000 (25%)"
+            },
+            4: {
+                id: 4,
+                name: "Kabel Fiber Drop Core (1000m)",
+                sku: "FO-DC-1C-1000M",
+                price: "Rp 650.000",
+                priceNum: 650000,
+                image: "images/Fiber optic dropcore.jpg",
+                isPromo: true,
+                savings: "Rp 160.000 (20%)"
+            },
+            5: {
+                id: 5,
+                name: "Rak Server Cabinet 19\" 42U",
+                sku: "RACK-42U-DEPTH1000",
+                price: "Rp 8.900.000",
+                priceNum: 8900000,
+                image: "images/rak server.jpg",
+                isPromo: false
+            },
+            6: {
+                id: 6,
+                name: "Laptop ThinkPad Workstation i7",
+                sku: "TP-P14S-GEN4-I7",
+                price: "Rp 16.800.000",
+                priceNum: 16800000,
+                image: "images/produk-laptop-thinkpad.jpg",
+                isPromo: false
+            }
+        };
+
+        // Mengambil keranjang dari localStorage
+        function getCartData() {
+            try {
+                const stored = localStorage.getItem('dns_cart');
+                if (stored !== null) {
+                    const parsed = JSON.parse(stored);
+                    if (Array.isArray(parsed)) {
+                        return parsed;
+                    }
+                }
+            } catch(e) {}
+            return [];
+        }
+
+        // Menyimpan keranjang ke localStorage
+        function saveCartData(cart) {
+            try {
+                localStorage.setItem('dns_cart', JSON.stringify(cart));
+            } catch(e) {}
+            renderCartPage();
+        }
+
+        // Merender tampilan isi keranjang
+        function renderCartPage() {
+            const cart = getCartData();
+            const container = document.getElementById('cart-items-container');
+            const wrapper = document.getElementById('cart-content-wrapper');
+            const emptyView = document.getElementById('cart-empty-view');
+
+            if (!cart || cart.length === 0) {
+                wrapper.style.display = 'none';
+                emptyView.style.display = 'block';
+                document.getElementById('cart-count').textContent = '0';
+                return;
+            }
+
+            wrapper.style.display = 'grid';
+            emptyView.style.display = 'none';
+            container.innerHTML = '';
+
+            let totalQty = 0;
+            let subtotal = 0;
+
+            cart.forEach((item, index) => {
+                const prod = databaseProduk[item.id] || databaseProduk[1];
+                const itemTotal = prod.priceNum * item.qty;
+                totalQty += item.qty;
+                subtotal += itemTotal;
+
+                const itemCard = document.createElement('div');
+                itemCard.style.cssText = "display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; padding:16px 0; border-bottom:1px solid #f1f5f9;";
+                itemCard.innerHTML = `
+                    <div style="display:flex; gap:14px; align-items:center; flex:1; min-width:240px;">
+                        <img src="${prod.image}" alt="${prod.name}" style="width:70px; height:70px; object-fit:contain; background:#ffffff; border:1px solid #e2e8f0; border-radius:6px; padding:4px;">
+                        <div>
+                            <h4 style="margin:0 0 4px 0; font-size:15px; color:#0f172a;">
+                                <a href="detail-produk.html?id=${prod.id}" style="color:#0f172a; text-decoration:none;">${prod.name}</a>
+                            </h4>
+                            <div style="font-size:12px; color:#64748b; margin-bottom:4px;">
+                                SKU: ${prod.sku} | Harga: <strong style="color:#0f172a;">${prod.price}</strong>
+                            </div>
+                            ${prod.isPromo ? `<span style="font-size:11px; color:#ef4444; background:#fee2e2; padding:2px 7px; border-radius:4px; font-weight:700;">Hemat: ${prod.savings}</span>` : ''}
+                        </div>
+                    </div>
+
+                    <!-- Kontrol Jumlah Unit -->
+                    <div style="display:flex; align-items:center; gap:8px;">
+                        <div style="display:inline-flex; align-items:center; border:1px solid #cbd5e1; border-radius:6px; background:#ffffff; overflow:hidden;">
+                            <button type="button" onclick="ubahItemQty(${index}, -1)" style="background:#f1f5f9; border:none; padding:5px 12px; font-size:14px; font-weight:bold; cursor:pointer; color:#0f172a;">−</button>
+                            <span style="width:38px; text-align:center; font-size:13.5px; font-weight:700; color:#0f172a;">${item.qty}</span>
+                            <button type="button" onclick="ubahItemQty(${index}, 1)" style="background:#f1f5f9; border:none; padding:5px 12px; font-size:14px; font-weight:bold; cursor:pointer; color:#0f172a;">+</button>
+                        </div>
+                    </div>
+
+                    <!-- Total Per Item & Tombol Hapus -->
+                    <div style="text-align:right; min-width:130px;">
+                        <div style="font-size:15px; font-weight:800; color:#f97316;">
+                            Rp ${itemTotal.toLocaleString('id-ID')}
+                        </div>
+                        <button type="button" onclick="hapusItem(${index})" style="background:none; border:none; color:#ef4444; font-size:12px; cursor:pointer; padding:4px 0; font-weight:600;">
+                            ✕ Hapus
+                        </button>
+                    </div>
+                `;
+                container.appendChild(itemCard);
+            });
+
+            // Update Ringkasan Biaya
+            document.getElementById('summary-total-qty').textContent = totalQty + " Unit";
+            document.getElementById('summary-subtotal').textContent = "Rp " + subtotal.toLocaleString('id-ID');
+            document.getElementById('summary-grand-total').textContent = "Rp " + subtotal.toLocaleString('id-ID');
+            document.getElementById('cart-count').textContent = totalQty;
+
+            // Update tautan WhatsApp
+            const btnWa = document.getElementById('btn-wa-direct-cart');
+            if (btnWa) {
+                const msg = `Halo Dian Nusantara Store, saya ingin memesan barang di keranjang belanja (${totalQty} unit, total: Rp ${subtotal.toLocaleString('id-ID')}). Mohon dibantu invoice pengirimannya.`;
+                btnWa.href = "https://wa.me/6285693176692?text=" + encodeURIComponent(msg);
+            }
+        }
+
+        // Fungsi Mengubah Jumlah Item
+        function ubahItemQty(index, delta) {
+            const cart = getCartData();
+            if (cart[index]) {
+                cart[index].qty += delta;
+                if (cart[index].qty < 1) {
+                    cart.splice(index, 1);
+                } else if (cart[index].qty > 50) {
+                    cart[index].qty = 50;
+                }
+                saveCartData(cart);
+            }
+        }
+
+        // Fungsi Menghapus Item
+        function hapusItem(index) {
+            const cart = getCartData();
+            if (cart[index]) {
+                cart.splice(index, 1);
+                saveCartData(cart);
+            }
+        }
+
+        // Fungsi Mengosongkan Keranjang
+        function kosongkanKeranjang() {
+            const cart = getCartData();
+            if (!cart || cart.length === 0) {
+                alert("Keranjang belanja sudah dalam keadaan kosong.");
+                return;
+            }
+            if (confirm("Apakah Anda yakin ingin mengosongkan seluruh isi keranjang belanja?")) {
+                saveCartData([]);
+            }
+        }
+
+        // Fungsi Memproses Form Checkout Pemesanan
+        function prosesCheckoutPesanan(e) {
+            e.preventDefault();
+            const cart = getCartData();
+            if (!cart || cart.length === 0) {
+                alert("Keranjang belanja Anda masih kosong!");
+                return false;
+            }
+
+            const nama = document.getElementById('nama_pemesan').value.trim();
+            const wa = document.getElementById('wa_pemesan').value.trim();
+            const alamat = document.getElementById('alamat_tujuan').value.trim();
+            const metode = document.getElementById('metode_bayar').value;
+            const catatan = document.getElementById('catatan_pembeli').value.trim();
+            const grandTotal = document.getElementById('summary-grand-total').textContent;
+            const totalQty = document.getElementById('summary-total-qty').textContent;
+
+            const ringkasanItem = cart.map(it => {
+                const p = databaseProduk[it.id] || databaseProduk[1];
+                return `  • ${p.name} (${it.qty} unit)`;
+            }).join("\n");
+
+            const pesanKonfirmasi = 
+                `KONFIRMASI FORMULIR PEMESANAN TOKO:\n\n` +
+                `Penerima: ${nama}\n` +
+                `WhatsApp: ${wa}\n` +
+                `Alamat: ${alamat}\n` +
+                `Metode Bayar: ${metode}\n` +
+                (catatan ? `Catatan: ${catatan}\n` : '') +
+                `\nRincian Barang:\n${ringkasanItem}\n\n` +
+                `Total Tagihan: ${grandTotal} (${totalQty})\n\n` +
+                `Kirim pesanan sekarang ke distributor resmi Dian Nusantara Store?`;
+
+            if (confirm(pesanKonfirmasi)) {
+                alert(
+                    `🎉 Terima Kasih, ${nama}!\n\n` +
+                    `Pesanan Anda dengan total tagihan ${grandTotal} telah berhasil kami terima.\n\n` +
+                    `Faktur resmi dan konfirmasi resi pengiriman akan segera dikirimkan ke nomor WhatsApp Anda (${wa}).`
+                );
+                // Kosongkan keranjang setelah order berhasil
+                saveCartData([]);
+                document.getElementById('form-checkout-keranjang').reset();
+            }
+            return false;
+        }
+
+        // Jalankan saat dokumen dimuat
+        document.addEventListener('DOMContentLoaded', renderCartPage);
+    </script>
+
+</body>
+</html>

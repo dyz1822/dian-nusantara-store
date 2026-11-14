@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Detail Produk — Dian Nusantara Store</title>
+    <!-- Favicon Logo Resmi -->
+    <link rel="icon" type="image/jpeg" href="images/logo.jpg">
+    <!-- Memanggil Berkas CSS Eksternal -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+    <!-- HEADER NAVIGASI TOKO -->
+    <header id="main-header">
+        <div class="container">
+            <nav id="navbar-utama">
+                <div class="logo-wrapper">
+                    <img src="images/logo.jpg" alt="Logo Dian Nusantara Store" class="logo-img">
+                    <div>
+                        <div class="logo-title">DIAN NUSANTARA STORE</div>
+                        <div class="logo-sub">Distributor Resmi Jaringan &amp; CCTV</div>
+                    </div>
+                </div>
+
+                <ul id="nav-menu">
+                    <li><a href="index.html" class="nav-link">Beranda</a></li>
+                    <li><a href="index.html#katalog-produk" class="nav-link active">Katalog</a></li>
+                    <li><a href="promo.html" class="nav-link">Promo</a></li>
+                    <li><a href="cara-beli.html" class="nav-link">Cara Beli</a></li>
+                    <!-- <li><a href="https://wa.me/6285693176692" target="_blank" class="nav-link">Kontak</a></li> -->
+                    <li><a href="keranjang.html" class="nav-btn-keranjang">🛒 Keranjang (<span id="cart-count">1</span>)</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container" style="padding-top: 30px; padding-bottom: 30px;">
+
+        <!-- Breadcrumb Navigasi Halaman -->
+        <div class="detail-breadcrumb">
+            <a href="index.html">Beranda</a> &gt; 
+            <a href="index.html#katalog-produk">Katalog Produk</a> &gt; 
+            <span id="breadcrumb-current" style="color:#0f172a; font-weight:600;">Detail Produk</span>
+        </div>
+
+        <!-- Bar Navigasi Pindah Detail Produk (6 Produk Pilihan) -->
+        <div class="product-switcher-bar">
+            <span class="product-switcher-label">🔍 Pilih Produk:</span>
+            <a href="detail-produk.html?id=1" class="switcher-btn" id="btn-switch-1">1. MikroTik (Diskon 15%)</a>
+            <a href="detail-produk.html?id=2" class="switcher-btn" id="btn-switch-2">2. Switch Cisco 24P</a>
+            <a href="detail-produk.html?id=3" class="switcher-btn" id="btn-switch-3">3. CCTV 4K (Diskon 25%)</a>
+            <a href="detail-produk.html?id=4" class="switcher-btn" id="btn-switch-4">4. Fiber Optik (Diskon 20%)</a>
+            <a href="detail-produk.html?id=5" class="switcher-btn" id="btn-switch-5">5. Rak Server 42U</a>
+            <a href="detail-produk.html?id=6" class="switcher-btn" id="btn-switch-6">6. Laptop ThinkPad</a>
+        </div>
+
+        <!-- DETAIL INFORMASI PRODUK DINAMIS (ID 1 - 6) -->
+        <article class="detail-hero">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+                <span id="detail-badge" class="badge-promo" style="position:static; background:#0284c7;">PRODUK ORIGINAL BERGARANSI</span>
+                <a href="index.html#katalog-produk" class="btn-primary" style="padding: 7px 16px; font-size: 13px;">
+                    ← Kembali ke Katalog Produk
+                </a>
+            </div>
+
+            <h1 id="detail-title" style="margin-top: 15px; font-size: 26px;">
+                Memuat Informasi Produk...
+            </h1>
+            <p id="detail-meta" style="color: #64748b; font-size: 14px; margin-top: 4px;">
+                SKU: <strong id="detail-sku">-</strong> | Kategori: <strong id="detail-category">-</strong> | Brand: <strong id="detail-brand">-</strong>
+            </p>
+
+            <!-- Foto Detail Produk Sesuai yang Diklik Pengguna -->
+            <img id="detail-img" src="images/MikroTik RouterBoard RB4011.jpg" alt="Detail Foto Produk" class="detail-banner-img">
+
+            <div class="detail-grid-layout">
+                
+                <!-- Kolom Kiri: Deskripsi, Tabel Spesifikasi Lengkap & Formulir Pemesanan -->
+                <div>
+                    <h2>Deskripsi &amp; Keunggulan Produk</h2>
+                    <div id="detail-desc" style="color:#334155; line-height: 1.7; font-size: 14.5px;">
+                        <p>Memuat deskripsi produk...</p>
+                    </div>
+
+                    <h2 style="margin-top: 30px;">Tabel Spesifikasi Teknis Lengkap</h2>
+                    <p style="color:#64748b; font-size:14px;">Spesifikasi resmi perangkat keras:</p>
+                    
+                    <table class="table-spec">
+                        <thead>
+                            <tr>
+                                <th style="width: 35%;">Parameter Spesifikasi</th>
+                                <th style="width: 65%;">Detail Teknis</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-spec-body">
+                            <!-- Diisi secara dinamis oleh JavaScript -->
+                        </tbody>
+                    </table>
+
+                    <!-- PANEL AKSI PEMBELIAN: PILIH JUMLAH & MASUKKAN KERANJANG -->
+                    <div class="product-purchase-box" style="background:#ffffff; border:1.5px solid #cbd5e1; border-radius:10px; padding:24px; margin-top:35px; box-shadow:0 3px 10px rgba(0,0,0,0.04);">
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; border-bottom:1px solid #e2e8f0; padding-bottom:10px;">
+                            <h3 style="font-size:18px; color:#0f172a; margin:0;">Pemesanan Produk</h3>
+                            <span id="detail-stock-indicator" style="font-size:12.5px; color:#16a085; font-weight:700;">✓ Ready Stock (Siap Kirim)</span>
+                        </div>
+                        <p style="color:#64748b; font-size:13.5px; margin-bottom:20px; line-height:1.5;">
+                            Tentukan jumlah unit yang dibutuhkan. Anda dapat memasukkannya ke dalam keranjang atau langsung melanjutkan ke proses pemesanan:
+                        </p>
+
+                        <!-- Bar Kuantitas & Subtotal Real-Time -->
+                        <div style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px; padding:16px 20px; margin-bottom:22px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+                            <div style="display:flex; align-items:center; gap:10px;">
+                                <label for="jumlah_order" style="font-size:14px; font-weight:700; color:#1e293b;">Jumlah Unit:</label>
+                                <div style="display:inline-flex; align-items:center; border:1px solid #cbd5e1; border-radius:6px; background:#ffffff; overflow:hidden;">
+                                    <button type="button" id="btn-qty-minus" onclick="ubahJumlah(-1)" style="background:#f1f5f9; border:none; padding:8px 14px; font-size:16px; font-weight:bold; cursor:pointer; color:#0f172a;">−</button>
+                                    <input type="number" id="jumlah_order" value="1" min="1" max="50" oninput="kalkulasiTotal()" style="width:50px; text-align:center; border:none; font-size:15px; font-weight:700; color:#0f172a; padding:7px 0;" required>
+                                    <button type="button" id="btn-qty-plus" onclick="ubahJumlah(1)" style="background:#f1f5f9; border:none; padding:8px 14px; font-size:16px; font-weight:bold; cursor:pointer; color:#0f172a;">+</button>
+                                </div>
+                                <span style="font-size:13px; color:#64748b;">unit</span>
+                            </div>
+
+                            <div style="text-align:right;">
+                                <span style="font-size:12px; color:#64748b; display:block;">Subtotal Estimasi:</span>
+                                <div id="cart-item-total" style="font-size:22px; font-weight:800; color:#f97316;">
+                                    Rp 0
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2 Tombol Aksi: Masukkan Keranjang & Beli Sekarang -->
+                        <div style="display:flex; gap:14px; flex-wrap:wrap;">
+                            <button type="button" id="btn-add-to-cart" onclick="tambahKeKeranjang(false)" style="flex:1; min-width:210px; background:#0284c7; color:#ffffff; border:none; padding:13px 20px; font-size:14.5px; font-weight:700; border-radius:8px; cursor:pointer; display:inline-flex; align-items:center; justify-content:center; gap:8px; box-shadow:0 2px 6px rgba(2,132,199,0.3);">
+                                🛒 Masukkan ke Keranjang
+                            </button>
+                            <button type="button" id="btn-buy-now" onclick="tambahKeKeranjang(true)" style="flex:1; min-width:190px; background:#f97316; color:#ffffff; border:none; padding:13px 20px; font-size:14.5px; font-weight:700; border-radius:8px; cursor:pointer; display:inline-flex; align-items:center; justify-content:center; gap:8px; box-shadow:0 2px 6px rgba(249,115,22,0.3);">
+                                ⚡ Beli Sekarang
+                            </button>
+                        </div>
+
+                        <!-- Notifikasi Sukses Masuk Keranjang (Toast) -->
+                        <div id="cart-toast" style="display:none; margin-top:16px; background:#ecfdf5; border:1px solid #10b981; border-radius:8px; padding:12px 18px; color:#065f46; font-size:13.5px;">
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+                                <span id="cart-toast-msg">✓ Produk berhasil ditambahkan ke keranjang belanja!</span>
+                                <a href="keranjang.html" style="color:#047857; font-weight:800; text-decoration:underline;">Buka Keranjang &amp; Checkout ↗</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kolom Kanan: Rangkuman Harga, Garansi, & Layanan -->
+                <div>
+                    <div class="detail-info-box">
+                        <span id="detail-promo-status" style="font-size:12px; color:#f97316; font-weight:700;">HARGA RESMI DISTRIBUTOR</span>
+                        <div id="detail-price-wrapper" style="margin: 6px 0 12px 0;">
+                            <div id="detail-price" style="font-size:26px; font-weight:800; color:#0f172a; margin: 4px 0 10px 0;">
+                                Rp 0
+                            </div>
+                        </div>
+                        <p style="font-size:13px; margin-bottom:8px;"><strong>Status Stok:</strong> <span id="detail-stock" style="color:#16a085; font-weight:bold;">Ready Stock (Siap Kirim)</span></p>
+                        <p style="font-size:13px; margin-bottom:8px;"><strong>Kondisi:</strong> <span id="detail-condition">100% Baru Original Segel</span></p>
+                        <p style="font-size:13px; margin-bottom:8px;"><strong>Garansi:</strong> <span id="detail-warranty">1 Tahun Resmi Distributor</span></p>
+                        <p style="font-size:13px; margin-bottom:0;"><strong>Konsultasi Cepat:</strong> Pak Doly (+62 856-9317-6692)</p>
+                    </div>
+
+                    <div class="detail-info-box">
+                        <h3 style="margin-bottom:12px; color:#0f172a;">Jaminan Layanan Kami</h3>
+                        <ul id="detail-benefits" style="font-size:13.5px; color:#475569; line-height:1.7;">
+                            <li>✓ Unit Baru Bersegel Resmi Distributor</li>
+                            <li>✓ Gratis Konsultasi Awal Instalasi</li>
+                            <li>✓ Pengiriman Ekspedisi Cepat &amp; Aman</li>
+                            <li>✓ Faktur Pajak Resmi untuk Perusahaan</li>
+                        </ul>
+                    </div>
+
+                    <div class="detail-info-box" style="text-align: center;">
+                        <h4 style="margin-bottom: 8px;">Order via WhatsApp?</h4>
+                        <p style="font-size:13px; color:#64748b; margin-bottom:15px;">Hubungi tim sales kami untuk penawaran harga pengadaan proyek kantor.</p>
+                        <a id="btn-wa-order" href="https://wa.me/6285693176692" target="_blank" class="btn-primary" style="display:block; text-align:center; font-size:13px;">
+                            Chat WhatsApp Sales ↗
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </article>
+
+    </main>
+
+    <!-- FOOTER RESMI -->
+    <footer id="footer-main">
+        <div class="container">
+            <div id="footer-menu-links">
+                <a href="index.html">Tentang Toko</a>
+                <span>|</span>
+                <a href="cara-beli.html">Layanan Pelanggan</a>
+                <span>|</span>
+                <a href="https://wa.me/6285693176692" target="_blank">Kontak Kami</a>
+            </div>
+            <div class="footer-contacts">
+                <a href="https://wa.me/6285693176692" target="_blank" class="footer-contact-badge">
+                    <span class="contact-icon">💬</span> WA: <strong>0856-9317-6692</strong>
+                </a>
+                <span class="footer-divider">•</span>
+                <a href="mailto:cs@diannusantara.store" class="footer-contact-badge">
+                    <span class="contact-icon">✉️</span> Email: <strong>cs@diannusantara.store</strong>
+                </a>
+               
+            </div>
+            <p style="margin: 4px 0 0 0;">
+                <span id="footer-copyright">Copyright &copy; 2026 - 411242033 Doly Mardianto. All Rights Reserved.</span>
+            </p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT DINAMIS: MERENDER DATA DETAIL SESUAI ID PRODUK YANG DIKLIK -->
+    <script>
+        // Database 6 Produk Pilihan
+        const databaseProduk = {
+            1: {
+                id: 1,
+                name: "MikroTik RouterBoard RB1100Dx4",
+                title: "MikroTik RouterBoard RB1100Dx4",
+                sku: "MT-RB1100DX4-RM",
+                category: "Router Enterprise & Gateway",
+                brand: "MikroTik Latvia",
+                price: "Rp 3.850.000",
+                priceNum: 3850000,
+                originalPrice: "Rp 4.500.000",
+                isPromo: true,
+                discountPercent: "Diskon 15%",
+                savings: "Rp 650.000 (15%)",
+                badge: "ORIGINAL SEGEL — DISTRIBUTOR RESMI",
+                badgeColor: "#0284c7",
+                stock: "Ready Stock (Siap Kirim)",
+                condition: "100% Baru Original Segel",
+                warranty: "1 Tahun Resmi Distributor",
+                image: "images/MikroTik RouterBoard RB4011.jpg",
+                descHtml: `
+                    <p>MikroTik RouterBoard RB1100Dx4 merupakan router enterprise bertenaga tinggi yang didesain untuk beban komputasi jaringan intensif. Dipersenjatai prosesor Quad-Core Cortex A15 berkecepatan 1.4GHz dengan akselerasi perangkat keras IPsec, router ini sangat ideal difungsikan sebagai router gateway utama kantor, sekolah, perhotelan, data center, dan jaringan ISP.</p>
+                    <p style="margin-top:10px;">Dilengkapi dengan port Gigabit Ethernet mandiri serta 1  port SFP+ 10Gbps untuk transmisi serat optik super cepat. Casing kokoh berbahan logam matte black 1U rackmount memberikan pembuangan panas pasif optimal tanpa suara bising kipas.</p>
+                `,
+                specs: [
+                    ["Arsitektur CPU", "ARM 32-bit Cortex A15 (Quad-Core @ 1400 MHz)"],
+                    ["Memori RAM", "1 GB RAM High Speed"],
+                    ["Penyimpanan Storage", "512 MB NAND Flash Storage"],
+                    ["Port Ethernet", "10x 10/100/1000 Mbps Gigabit Ethernet Ports"],
+                    ["Sistem Operasi", "RouterOS Level 5 License Resmi"],
+                    ["Konsumsi Daya", "Maksimal 33 Watt (Adaptor 24V 2.5A disertakan)"],
+                    ["Dimensi & Mounting", "228 x 120 x 30 mm | Termasuk 1U Rackmount Ears"]
+                ],
+                benefits: [
+                    "Penggantian Unit Baru jika Cacat Pabrik",
+                    "Gratis Konsultasi Awal Setting Jaringan",
+                    "Termasuk Aksesoris Braket Rackmount 1U",
+                    "Faktur Pajak Resmi untuk Perusahaan"
+                ],
+                waMsg: "Halo DianNusantara Store, saya tertarik membeli MikroTik RouterBoard RB4011."
+            },
+            2: {
+                id: 2,
+                name: "Switch Cisco Catalyst 24-Port",
+                title: "Switch Cisco Catalyst 24-Port Gigabit Managed PoE+ (2960-X Series)",
+                sku: "CS-WS-C2960X-24PS-L",
+                category: "Managed Switch Enterprise",
+                brand: "Cisco Systems USA",
+                price: "Rp 7.500.000",
+                priceNum: 7500000,
+                badge: "HARGA RESMI — DISTRIBUTOR CISCO",
+                badgeColor: "#0284c7",
+                stock: "Ready Stock (Gudang Jakarta)",
+                condition: "100% Original Cisco Baru Segel",
+                warranty: "1 Tahun Resmi Distributor",
+                image: "images/switch cisco catalyst 24 port .jpg",
+                descHtml: `
+                    <p>Switch Cisco Catalyst seri 2960-X dirancang khusus untuk keandalan operasional tingkat enterprise pada jaringan kampus, gedung perkantoran, dan data center. Menghadirkan kapasitas switching hingga 216 Gbps dengan 24 port Gigabit Ethernet yang mendukung Power over Ethernet (PoE+) untuk mencatu daya IP Phone, Access Point WiFi 6, dan kamera CCTV secara langsung tanpa adaptor tambahan.</p>
+                    <p style="margin-top:10px;">Mendukung konfigurasi VLAN 802.1Q komprehensif, Spanning Tree Protocol (RSTP/MSTP) untuk proteksi loop jaringan, serta sistem keamanan port security 802.1X dan DHCP Snooping guna mencegah serangan spoofing dalam jaringan lokal.</p>
+                `,
+                specs: [
+                    ["Model Seri", "Cisco Catalyst 2960-X Series 24PS-L"],
+                    ["Jumlah Port Utama", "24x 10/100/1000 Mbps Gigabit Ethernet RJ-45 PoE+"],
+                    ["Uplink Interfaces", "4x 1G SFP (Small Form-Factor Pluggable)"],
+                    ["Switching Capacity", "216 Gbps Bandwidth Non-blocking"],
+                    ["Forwarding Rate", "71.4 Mpps (Million Packets per Second)"],
+                    ["Fitur Manajemen", "Managed Layer 2+, Cisco IOS LAN Base, CLI, Web GUI, SNMP"],
+                    ["Power PoE Budget", "Total 370 Watt PoE+ (Maksimal 30W per port)"],
+                    ["Form Factor & Berat", "1U Rackmount 19 Inch (Termasuk braket kuping rack) | 5.8 kg"]
+                ],
+                benefits: [
+                    "Unit Baru Original Bersegel Hologram Cisco",
+                    "Termasuk Kabel Power & Rackmount Bracket Kit",
+                    "Panduan Setting VLAN Awal Gratis",
+                    "Faktur Pajak Resmi PPN Perusahaan"
+                ],
+                waMsg: "Halo DianNusantara Store, saya tertarik membeli Switch Cisco Catalyst 24 Port."
+            },
+            3: {
+                id: 3,
+                name: "Paket CCTV IP 4K Hikvision",
+                title: "Paket Kamera CCTV IP 4K Ultra HD Hikvision (8 Kamera + NVR 16 Channel + HDD 4TB)",
+                sku: "HK-IP4K-KIT8-16CH",
+                category: "Sistem Keamanan CCTV IP",
+                brand: "Hikvision",
+                price: "Rp 12.250.000",
+                priceNum: 12250000,
+                originalPrice: "Rp 16.350.000",
+                isPromo: true,
+                discountPercent: "Diskon 25%",
+                savings: "Rp 4.100.000 (25%)",
+                badge: "PAKET KOMPLIT — SIAP PASANG CCTV 4K",
+                badgeColor: "#059669",
+                stock: "Ready Stock (Paket Komplit)",
+                condition: "100% Baru Original Hikvision",
+                warranty: "2 Tahun Resmi Distributor",
+                image: "images/paket cctv.jpg",
+                descHtml: `
+                    <p>Solusi pengawasan keamanan terlengkap dan terdepan untuk perkantoran, pabrik, gudang, kawasan ruko, dan residensial elit. Menggunakan kamera IP beresolusi 4K (8 Megapixel) dengan teknologi ColorVu yang menghasilkan rekaman video berwarna tajam 24 jam penuh bahkan dalam kondisi gelap gulita.</p>
+                    <p style="margin-top:10px;">Paket ini sudah mencakup unit NVR 16-Channel 4K dengan built-in PoE (Power over Ethernet), sehingga instalasi kabel menjadi sangat rapi dan praktis. Disertakan harddisk khusus CCTV surveillance kapasitas 4TB yang mampu merekam rekaman video secara terus-menerus hingga 30 hari dengan kompresi hemat H.265+.</p>
+                `,
+                specs: [
+                    ["Jumlah Kamera", "8x Kamera IP Bullet Outdoor 4K (8 MP) ColorVu"],
+                    ["Resolusi Rekaman", "Ultra HD 4K (3840 x 2160 piksel @ 25 fps)"],
+                    ["Lensa & Sudut Pandang", "2.8 mm Fixed Lens (Sudut pandang diagonal lebar 108°)"],
+                    ["Teknologi Night Vision", "Hikvision ColorVu (Rekaman warna terang malam hari)"],
+                    ["Standar Proteksi Cuaca", "IP67 Waterproof & Dustproof Casing Metal Outdoor"],
+                    ["Unit Perekam (NVR)", "Hikvision 16-Channel 4K NVR with 16-Port PoE Terintegrasi"],
+                    ["Media Penyimpanan", "1x HDD 4TB Seagate SkyHawk Surveillance (Terpasang)"],
+                    ["Aplikasi Monitoring", "Hik-Connect Cloud P2P (Live streaming Android & iOS)"]
+                ],
+                benefits: [
+                    "Gratis Setting NVR & Akun Cloud Hik-Connect",
+                    "Termasuk Konektor RJ-45 Cat6 & Waterproof Boot",
+                    "Harddisk 4TB Resmi Garansi 3 Tahun",
+                    "Layanan After Sales & Panduan Pemasangan"
+                ],
+                waMsg: "Halo DianNusantara Store, saya tertarik membeli Paket CCTV IP 4K Hikvision."
+            },
+            4: {
+                id: 4,
+                name: "Kabel Fiber Drop Core (1000m)",
+                title: "Kabel Fiber Optik Drop Core Single Mode 1 Core 3 Kawat Baja (Roll 1000 Meter)",
+                sku: "FO-DC-1C-1000M",
+                category: "Kabel Transmisi Fiber Optik",
+                brand: "FiberLink Premium",
+                price: "Rp 650.000",
+                priceNum: 650000,
+                originalPrice: "Rp 810.000",
+                isPromo: true,
+                discountPercent: "Diskon 20%",
+                savings: "Rp 160.000 (20%)",
+                badge: "READY STOCK — ROLL 1000 METER",
+                badgeColor: "#16a085",
+                stock: "Ready Stock (Siap Kirim)",
+                condition: "1 Roll Hasler Kayu Segel",
+                warranty: "Telkom / ISP Qualified Standard",
+                image: "images/Fiber optic dropcore.jpg",
+                descHtml: `
+                    <p>Kabel Fiber Optik Drop Core 1 Core Single Mode kualitas premium yang dirancang untuk instalasi jaringan FTTH (Fiber to the Home), interkoneksi backbone gedung, jalur CCTV outdoor antar tiang, serta jaringan ISP komersial. Memiliki ketahanan fisik yang tinggi berkat penguat 3 kawat baja (1 kawat messenger penggantung tebal + 2 kawat pengapit serat kaca).</p>
+                    <p style="margin-top:10px;">Menggunakan jenis kaca G.657A1 dengan karakteristik rendah redaman (low bending loss) sehingga sinyal cahaya tetap stabil meski ditarik pada sudut belokan tajam. Jaket luar dilapisi material LSZH (Low Smoke Zero Halogen) tahan radiasi UV matahari dan anti-lapuk saat terpapar hujan badai outdoor.</p>
+                `,
+                specs: [
+                    ["Panjang Total", "1000 Meter per Roll Hasler Kayu"],
+                    ["Tipe Serat Optik", "Single Mode 9/125 μm (Standar G.657A1 Bend Insensitive)"],
+                    ["Jumlah Core Kaca", "1 Core (Blue Core Coating)"],
+                    ["Struktur Penguat Fisik", "3 Kawat Baja (1 Kawat Penggantung 1.0mm + 2 Kawat Samping 0.45mm)"],
+                    ["Material Selubung (Jacket)", "LSZH (Low Smoke Zero Halogen) Anti-UV Warna Hitam"],
+                    ["Tingkat Redaman", "≤ 0.36 dB/km pada 1310 nm | ≤ 0.22 dB/km pada 1550 nm"],
+                    ["Kekuatan Tarik (Tensile)", "600 N (Jangka Pendek) / 300 N (Jangka Panjang)"],
+                    ["Aplikasi Pemasangan", "Aerial Outdoor (Lintas Tiang Udara) & Indoor Conduit"]
+                ],
+                benefits: [
+                    "Kawat Baja Tebal Kuat Tahan Angin Kencang",
+                    "Core Fiber Asli Lolos Uji OTDR",
+                    "Pengiriman Ekspedisi Cargo Seluruh Indonesia",
+                    "Harga Grosir Spesial untuk Kontraktor & RT/RW Net"
+                ],
+                waMsg: "Halo DianNusantara Store, saya tertarik membeli Kabel Fiber Drop Core 1000m."
+            },
+            5: {
+                id: 5,
+                name: "Rak Server Cabinet 19\" 42U",
+                title: "Server Rack Cabinet 19\" 42U Depth 1000mm Closed Rack with Tempered Glass & Dual Fan",
+                sku: "RACK-42U-DEPTH1000",
+                category: "Server Rack & Data Center",
+                brand: "IndoRack Server Enterprise",
+                price: "Rp 8.900.000",
+                priceNum: 8900000,
+                badge: "HEAVY DUTY 42U — DATA CENTER ENCLOSURE",
+                badgeColor: "#6366f1",
+                stock: "Ready Stock (Siap Kirim)",
+                condition: "100% Baru Knock Down / Rakit",
+                warranty: "3 Tahun Garansi Konstruksi Fisik",
+                image: "images/rak server.jpg",
+                descHtml: `
+                    <p>Lemari rak server tertutup (closed rack) standar industri 19 inch dengan kapasitas tinggi 42U dan kedalaman 1000 mm. Dibuat khusus untuk menampung server blade dan server rackmount panjang (seperti Dell PowerEdge, HPE ProLiant, Lenovo ThinkSystem), UPS online berkapasitas besar, modular switch, dan patch panel kabel data.</p>
+                    <p style="margin-top:10px;">Konstruksi menggunakan plat baja dingin SPCC bermutu tinggi dengan ketebalan rangka hingga 2.0 mm yang mampu menahan beban statis hingga 800 kg. Pintu depan terbuat dari kaca tempered glass tebal dengan kunci pengaman, sementara pintu belakang berupa perforated door ganda berlubang mikro untuk pembuangan sirkulasi panas yang didorong 4 unit kipas exhaust roof 220V.</p>
+                `,
+                specs: [
+                    ["Ukuran Standar Rack", "Standar 19 Inch (Kapasitas Vertikal 42U / ~2050 mm)"],
+                    ["Dimensi Fisik (W x D x H)", "600 mm x 1000 mm x 2050 mm"],
+                    ["Pintu Depan (Front Door)", "Tempered Glass Door 5 mm with Spring Lock Swing Handle"],
+                    ["Pintu Belakang (Rear Door)", "Double Perforated Metal Door (Aliran Udara Ventilasi 75%)"],
+                    ["Pintu Samping (Side Doors)", "Removable Steel Side Panels with Cylinder Locks"],
+                    ["Sistem Pendingin Bawaan", "4x Heavy Duty 220V AC Top Exhaust Fans"],
+                    ["Distribusi Listrik (PDU)", "1x PDU 8-Outlet German Style with On/Off Surge Protector"],
+                    ["Kapasitas Beban Statis", "Maksimal 800 kg Beban Distribusi Merata"]
+                ],
+                benefits: [
+                    "Termasuk 50 Set Baut & Mur Cage Nuts",
+                    "Termasuk 4 Roda Kastor Heavy Duty & Kaki Pengatur",
+                    "Termasuk 2 Unit Fixed Shelf Plat Rak Kokoh",
+                    "Layanan Perakitan di Tempat (Area Jabodetabek)"
+                ],
+                waMsg: "Halo DianNusantara Store, saya tertarik membeli Rak Server Cabinet 42U."
+            },
+            6: {
+                id: 6,
+                name: "Laptop ThinkPad Workstation i7",
+                title: "Laptop Lenovo ThinkPad P14s Workstation (Intel Core i7 Gen 13, 16GB DDR5, SSD 512GB NVMe, Port LAN RJ-45)",
+                sku: "TP-P14S-GEN4-I7",
+                category: "Laptop Teknisi & Mobile Workstation",
+                brand: "Lenovo ThinkPad",
+                price: "Rp 16.800.000",
+                priceNum: 16800000,
+                badge: "GARANSI 3 TAHUN ON-SITE — RESMI LENOVO",
+                badgeColor: "#0f172a",
+                stock: "Ready Stock (Unit Baru Segel)",
+                condition: "100% Brand New in Box (BNIB)",
+                warranty: "3 Tahun Premier Support On-Site",
+                image: "images/produk-laptop-thinkpad.jpg",
+                descHtml: `
+                    <p>Lenovo ThinkPad P14s Mobile Workstation merupakan laptop kerja tangguh berstandar militer (MIL-STD-810H) yang diciptakan untuk profesional IT, network engineer, konsultan infrastruktur, dan software developer. Mengusung prosesor Intel Core i7 Generasi ke-13 dengan 14 Core (20 Threads) yang sanggup menjalankan berbagai virtualisasi router (GNS3, EVE-NG, VMware) secara mulus.</p>
+                    <p style="margin-top:10px;">Keunggulan utama yang sangat dicari oleh teknisi jaringan adalah ketersediaan port Ethernet LAN RJ-45 fisik bawaan (bukan adaptor dongle USB), 2 port Thunderbolt 4 berkecepatan 40Gbps, keyboard legendaris anti-tumpahan air dengan TrackPoint presisi, serta baterai tahan lama berteknologi pengisian kilat Rapid Charge.</p>
+                `,
+                specs: [
+                    ["Prosesor", "Intel Core i7-1370P vPro (14 Core, 20 Threads, Turbo Boost up to 5.2 GHz)"],
+                    ["Memori RAM", "16 GB DDR5 5200 MHz Dual Channel (Upgradeable up to 64GB)"],
+                    ["Penyimpanan Storage", "512 GB SSD M.2 2280 NVMe PCIe Gen 4 x4 Performance"],
+                    ["Pengolah Grafis", "Intel Iris Xe Graphics + NVIDIA RTX A500 4GB GDDR6 VRAM"],
+                    ["Layar Display", "14.0\" WUXGA (1920 x 1200) IPS 400 nits, Anti-glare, 100% sRGB"],
+                    ["Konektivitas Fisik", "1x RJ-45 Gigabit Ethernet, 2x Thunderbolt 4, 2x USB 3.2, 1x HDMI 2.1"],
+                    ["Sistem Keamanan", "Fingerprint Sensor, Kamera IR Privacy Shutter, TPM 2.0 Discrete"],
+                    ["Garansi & OS", "Windows 11 Pro 64-bit Resmi | 3 Tahun Lenovo Premier Support On-Site"]
+                ],
+                benefits: [
+                    "Tas Ransel Original Lenovo ThinkPad Backpack",
+                    "Wireless Mouse Ergonomis Silent Click",
+                    "Instalasi Windows 11 Pro Asli & Office",
+                    "Garansi Teknisi Datang ke Alamat (On-Site)"
+                ],
+                waMsg: "Halo DianNusantara Store, saya tertarik membeli Laptop ThinkPad Workstation i7."
+            }
+        };
+
+        // Fungsi Render Data Produk Sesuai ID
+        function renderDetailProduk() {
+            // Ambil parameter id dari URL (?id=...)
+            const urlParams = new URLSearchParams(window.location.search);
+            let id = parseInt(urlParams.get('id'), 10);
+            
+            // Default ke Produk 1 jika parameter tidak ada atau tidak valid
+            if (!id || !databaseProduk[id]) {
+                id = 1;
+            }
+
+            const data = databaseProduk[id];
+
+            // 1. Update Title & Metadata
+            document.title = "Detail Produk — " + data.name + " | Dian Nusantara Store";
+            document.getElementById('breadcrumb-current').textContent = data.name;
+            document.getElementById('detail-title').textContent = data.title;
+            document.getElementById('detail-sku').textContent = data.sku;
+            document.getElementById('detail-category').textContent = data.category;
+            document.getElementById('detail-brand').textContent = data.brand;
+
+            // 2. Update Badge & Foto
+            const badgeEl = document.getElementById('detail-badge');
+            badgeEl.textContent = data.badge;
+            badgeEl.style.background = data.badgeColor || '#0284c7';
+
+            const imgEl = document.getElementById('detail-img');
+            imgEl.src = data.image;
+            imgEl.alt = "Detail Foto " + data.name;
+
+            // 3. Update Deskripsi
+            document.getElementById('detail-desc').innerHTML = data.descHtml;
+
+            // 4. Update Tabel Spesifikasi
+            const tbody = document.getElementById('table-spec-body');
+            tbody.innerHTML = '';
+            data.specs.forEach(spec => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `<td>${spec[0]}</td><td>${spec[1]}</td>`;
+                tbody.appendChild(tr);
+            });
+
+            // 5. Update Kotak Rangkuman Harga, Garansi & Stok
+            const priceWrapper = document.getElementById('detail-price-wrapper');
+            const promoStatus = document.getElementById('detail-promo-status');
+            
+            if (data.isPromo) {
+                promoStatus.textContent = "🔥 HARGA PROMO SPESIAL (DISKON AKTIF)";
+                promoStatus.style.color = "#ef4444";
+                priceWrapper.innerHTML = `
+                    <div class="price-promo-tag" style="margin: 4px 0 6px 0;">
+                        <span class="price-original" style="font-size:16px;">${data.originalPrice}</span>
+                        <span class="price-tag" style="font-size:26px; font-weight:800; color:#f97316; margin:0;">${data.price}</span>
+                        <span class="badge-discount-percent" style="font-size:12px; padding:3px 8px;">${data.discountPercent}</span>
+                    </div>
+                    <div style="font-size:13px; color:#16a085; font-weight:700; margin-bottom:10px;">
+                        ✓ Hemat biaya pengadaan: ${data.savings}
+                    </div>
+                `;
+            } else {
+                promoStatus.textContent = "HARGA RESMI DISTRIBUTOR";
+                promoStatus.style.color = "#0284c7";
+                priceWrapper.innerHTML = `
+                    <div id="detail-price" style="font-size:26px; font-weight:800; color:#0f172a; margin: 4px 0 10px 0;">
+                        ${data.price}
+                    </div>
+                `;
+            }
+
+            document.getElementById('detail-stock').textContent = data.stock;
+            document.getElementById('detail-condition').textContent = data.condition;
+            document.getElementById('detail-warranty').textContent = data.warranty;
+
+            // 6. Update List Keuntungan
+            const benefitsList = document.getElementById('detail-benefits');
+            benefitsList.innerHTML = '';
+            data.benefits.forEach(benefit => {
+                const li = document.createElement('li');
+                li.textContent = "✓ " + benefit;
+                benefitsList.appendChild(li);
+            });
+
+            // 7. Simpan Objek Produk Aktif
+            currentProductData = data;
+
+            // Reset jumlah beli ke 1 dan hitung total biaya
+            document.getElementById('jumlah_order').value = 1;
+            kalkulasiTotal();
+
+            // 8. Update Tombol WhatsApp
+            const btnWa = document.getElementById('btn-wa-order');
+            if (btnWa) {
+                btnWa.href = "https://wa.me/6285693176692?text=" + encodeURIComponent(data.waMsg);
+            }
+
+            // 9. Update Active Switcher Button
+            for (let i = 1; i <= 6; i++) {
+                const btn = document.getElementById('btn-switch-' + i);
+                if (btn) {
+                    if (i === id) {
+                        btn.classList.add('active');
+                    } else {
+                        btn.classList.remove('active');
+                    }
+                }
+            }
+
+            // 10. Update Navbar Cart Count
+            updateNavbarCartCount();
+        }
+
+        // Variabel global untuk menyimpan data produk aktif
+        let currentProductData = null;
+
+        // Fungsi menambah / mengurangi jumlah pesanan (+ / -)
+        function ubahJumlah(delta) {
+            const inputQty = document.getElementById('jumlah_order');
+            let val = parseInt(inputQty.value) || 1;
+            val += delta;
+            if (val < 1) val = 1;
+            if (val > 50) val = 50;
+            inputQty.value = val;
+            kalkulasiTotal();
+        }
+
+        // Fungsi kalkulasi subtotal biaya otomatis secara real-time
+        function kalkulasiTotal() {
+            if (!currentProductData) return;
+            const inputQty = document.getElementById('jumlah_order');
+            let qty = parseInt(inputQty.value) || 1;
+            if (qty < 1) { qty = 1; inputQty.value = 1; }
+            if (qty > 50) { qty = 50; inputQty.value = 50; }
+            
+            const total = qty * currentProductData.priceNum;
+            document.getElementById('cart-item-total').textContent = "Rp " + total.toLocaleString('id-ID');
+        }
+
+        // Fungsi Tambah ke Keranjang / Beli Sekarang
+        function tambahKeKeranjang(isBuyNow) {
+            if (!currentProductData) return;
+            const inputQty = document.getElementById('jumlah_order');
+            const qty = parseInt(inputQty.value) || 1;
+
+            let cart = [];
+            try {
+                const stored = localStorage.getItem('dns_cart');
+                if (stored) {
+                    cart = JSON.parse(stored);
+                } else {
+                    cart = [];
+                }
+            } catch(e) {
+                cart = [];
+            }
+
+            // Cek apakah item sudah ada di keranjang
+            const existingIndex = cart.findIndex(item => item.id === currentProductData.id);
+            if (existingIndex > -1) {
+                cart[existingIndex].qty += qty;
+            } else {
+                cart.push({
+                    id: currentProductData.id,
+                    qty: qty
+                });
+            }
+
+            try {
+                localStorage.setItem('dns_cart', JSON.stringify(cart));
+            } catch(e) {}
+
+            updateNavbarCartCount();
+
+            if (isBuyNow) {
+                window.location.href = 'keranjang.html';
+            } else {
+                const toast = document.getElementById('cart-toast');
+                const toastMsg = document.getElementById('cart-toast-msg');
+                if (toast && toastMsg) {
+                    toastMsg.textContent = `✓ Berhasil menambahkan ${qty} unit "${currentProductData.name}" ke keranjang!`;
+                    toast.style.display = 'block';
+                    toast.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }
+            }
+        }
+
+        function updateNavbarCartCount() {
+            let totalQty = 0;
+            try {
+                const stored = localStorage.getItem('dns_cart');
+                if (stored !== null) {
+                    const cart = JSON.parse(stored);
+                    if (Array.isArray(cart)) {
+                        totalQty = cart.reduce((acc, it) => acc + (it.qty || 1), 0);
+                    }
+                }
+            } catch(e) {
+                totalQty = 0;
+            }
+            const countEl = document.getElementById('cart-count');
+            if (countEl) countEl.textContent = totalQty;
+        }
+
+        // Jalankan saat dokumen selesai dimuat
+        document.addEventListener('DOMContentLoaded', renderDetailProduk);
+    </script>
+
+</body>
+</html>
